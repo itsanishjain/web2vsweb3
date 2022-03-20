@@ -1,10 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  pinataUploadImage,
-  pinataUploadMetadata,
-  nftDotStorage,
-} from "../../utils";
+
 import Loader from "./Loader";
 
 export default function Form({setMetadataURLIPFS}) {
@@ -40,16 +36,16 @@ export default function Form({setMetadataURLIPFS}) {
     if (Object.keys(_errors).length === 0) {
       console.log("NO ERRORs");
       setLoading(true);
-      const metadata = await nftDotStorage(formValues.imageUrl);
-      console.log("METADATA", metadata.url);
-      setMetadataURLIPFS(metadata.url);
-      setLoading(false);
+      // const metadata = await nftDotStorage(formValues.imageUrl);
+      // console.log("METADATA", metadata.url);
+      // setMetadataURLIPFS(metadata.url);
+      // setLoading(false);
       console.log("UPLOADED IMAGE TO IPFS");
     }
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-8 border border-red-600 p-4">
+    <div className="max-w-lg mx-auto mt-8 bg-white shadow-lg rounded-md p-4">
       <form>
         <p className="text-red-800 font-bold text-md">
           {formErrors.imageUrl && "Please upload an image"}
@@ -63,7 +59,7 @@ export default function Form({setMetadataURLIPFS}) {
       </form>
       {!loading ? (
         <button
-          className="mt-2 border border-blue-500 p-4 rounded-lg"
+          className="mt-2 border bg-yellow-400 p-4 rounded-lg"
           onClick={handleSubmit}
         >
           UPLOAD

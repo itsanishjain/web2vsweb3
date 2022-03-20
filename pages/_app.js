@@ -1,11 +1,11 @@
 import "../styles/globals.css";
-import { VoidNerdProvider } from "../context/VoidNerd";
+import { MainContextProvider } from "../context/MainContext";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <VoidNerdProvider>
+    <MainContextProvider>
       <Component {...pageProps} />
-    </VoidNerdProvider>
+    </MainContextProvider>
   );
 }
 

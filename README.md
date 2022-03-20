@@ -1,1 +1,1 @@
-Vote on people Seb2 Vs Web3 versions
+Vote on people Seb2 Vs Web3 Avatars
